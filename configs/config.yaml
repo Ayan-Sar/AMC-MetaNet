@@ -1,0 +1,55 @@
+# AMC-MetaNet Configuration
+
+# Dataset settings
+dataset:
+  name: "NWPU-RESISC45"  # Options: NWPU-RESISC45, UCMerced, AID, WHU-RS19
+  root: "./data"
+  image_size: 84
+  num_workers: 4
+
+# Model settings
+model:
+  backbone: "resnet12"  # Options: resnet12, conv4
+  feature_dim: 640
+  dropout: 0.5
+
+# Adaptive Metric Module settings
+metric:
+  use_adaptive: true
+  attention_dim: 128
+  temperature: 1.0
+
+# Few-shot settings
+few_shot:
+  train_way: 5
+  train_shot: 5
+  train_query: 15
+  test_way: 5
+  test_shot: 1  # Can be 1 or 5
+  test_query: 15
+
+# Training settings
+training:
+  epochs: 100
+  episodes_per_epoch: 100
+  optimizer: "adam"
+  learning_rate: 0.001
+  weight_decay: 0.0005
+  lr_scheduler: "step"
+  lr_step_size: 20
+  lr_gamma: 0.5
+
+# Evaluation settings
+evaluation:
+  num_episodes: 600
+  confidence_interval: 0.95
+
+# Logging settings
+logging:
+  log_dir: "./logs"
+  checkpoint_dir: "./checkpoints"
+  save_freq: 10
+  tensorboard: true
+
+# Random seed
+seed: 42
