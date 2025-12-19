@@ -250,4 +250,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Made with ❤️ for Remote Sensing Research (Under review in ICASSP 2026)
+(Under review in ICASSP 2026)
